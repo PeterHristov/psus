@@ -9,3 +9,6 @@ As usual, you can clone the code using:
     git clone https://github.com/PeterHristov/psus.git
 
 in your favourite git terminal
+
+#### License
+The code is distributed under GPL v3. Please check the license file.
