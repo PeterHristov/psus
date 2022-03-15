@@ -7,7 +7,7 @@ function [pF,sOutF] = psus(func,d,t_star,n,p,outdist,inpdist)
 %%%     p       - target level probability (scalar)
 %%%     outdist - name of the output distribution (char)
 %%%     inpdist - name and parameter tuple for the input distribution 
-%%%               (1-by-2 cell). If left not specified, a uniform distro on
+%%%               (1-by-2 cell). If left unspecified, a uniform distro on
 %%%               [0,1] is used.
 %%%
 %%% Outputs:
