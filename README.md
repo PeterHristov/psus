@@ -58,7 +58,7 @@ There are several things happening in a few sections. Let's go through them one 
 	outD = 'norm';
 	inpD = {'unif',[0,1]};
 	
-The first section is responsible for setting the main parameters of the test problem and the algorithm. I have tried to use a notation consistent with the paper. In its initial version `psus_demo.m` analyses the well-known branin fucntion, which has been *distributionalised* (as described in the paper). This fucntion is two-dimensional, so `d = 2`. The `mode` and `t_star` parameters have been chosen to illustrate the ideas in the paper. The idea behind `mode = 'neg'`is that one of the two failure domains will disappear at low fidelities (set via the second parameter in the model). The `inpD` and `outD` variables hold information about the input and output distribution of the model, respectively, in this case a standard uniform and a normal. As intended, the no parameters are passed for the output distribution, since these vary with the model input. Refer to the paper for more information on the admissible distrbutions (or try to run with whatever distributions and the code should produce an informative error if you don't get it right). The other parameters, `N` and `p0` set the behaviour of the PSuS. Again, check the paper to understand how they affect the results.
+The first section is responsible for setting the main parameters of the test problem and the algorithm. I have tried to use a notation consistent with the paper. In its initial version `psus_demo.m` analyses the well-known branin fucntion, which has been *distributionalised* (as described in the paper). This fucntion is two-dimensional, so `d = 2`. The `mode` and `t_star` parameters have been chosen to illustrate the ideas in the paper. The idea behind `mode = 'neg'` is that one of the two failure domains will disappear at low fidelities (set via the second parameter in the model). The `inpD` and `outD` variables hold information about the input and output distribution of the model, respectively, in this case a standard uniform and a normal. As intended, the no parameters are passed for the output distribution, since these vary with the model input. Refer to the paper for more information on the admissible distrbutions (or try to run with whatever distributions and the code should produce an informative error if you don't get it right). The other parameters, `N` and `p0` set the behaviour of the PSuS. Again, check the paper to understand how they affect the results.
 
 	%% Run 1 iter
 	func = @(x)branin_uncert(x,1,mode); %Largest level of uncertainty
@@ -71,6 +71,7 @@ Since `psus.m` only accepts functions with a single input, you must cast your te
  - Test functions can only have a single input parameter (see above).
  - Test functions should have two outputs, not an 2-by-1 or 1-by-2 array of outputs. These are the two parameters of the `outD` distribution.
  - The functions must be vectorised, as the code does not provide a one-at-a-time running feature.
+ 
  
 	%% Run multiple iter's
 	iter = [1,5,10,15,25,50,75,100,250:250:1000]';
