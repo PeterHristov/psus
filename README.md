@@ -85,5 +85,5 @@ Let's run PSuS for progressively finer quality approximations (`iter` from `2` t
 
 ### Contributions
 The main contribution you can make to this effort is to use it with probabilistic computer models and get back to me at p[dotty]hristov[at]liv[dotter]ac[dotted]uk
-#### License
+### License
 The code is distributed under GPL v3. Please check the license file.
