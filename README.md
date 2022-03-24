@@ -72,6 +72,7 @@ Since `psus.m` only accepts functions with a single input, you must cast your te
  - Test functions should have two outputs, not an 2-by-1 or 1-by-2 array of outputs. These are the two parameters of the `outD` distribution.
  - The functions must be vectorised, as the code does not provide a one-at-a-time running feature.
  
+Let's run PSuS for progressively finer quality approximations (`iter` from `2` to `1000`) to demonstrate the that PSuS generalises SuS.
  
 	%% Run multiple iter's
 	iter = [1,5,10,15,25,50,75,100,250:250:1000]';
@@ -81,8 +82,6 @@ Since `psus.m` only accepts functions with a single input, you must cast your te
 		[~,sOut(i,1)] = psus(func,d,t_star,N,p0,outD,inpD);
 		disp(iter(i))
 	end
-	
-This block runs PSuS for progressively finer quality approximations (`iter` from `2` to `1000`) to demonstrate the fact that PSuS generalises SuS.
 
 ### Contributions
 The main contribution you can make to this effort is to use it with probabilistic computer models and get back to me at p[dotty]hristov[at]liv[dotter]ac[dotted]uk
